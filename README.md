@@ -8,7 +8,7 @@
 
 ## 编译命令
 
-1. 首先装好 Linux 系统， Ubuntu 20.04 LTS
+1. 首先装好 Linux 系统， Ubuntu 22.04 LTS
 
 2. 安装编译依赖
 
@@ -26,8 +26,8 @@
 3. 下载源代码，更新 feeds 并选择配置
 
    ```bash
-   git clone -b main --single-branch https://github.com/sdf8057/ipq6000.git
-   cd ipq6000
+   git clone -b main --single-branch https://github.com/KK2018gh/ipq6k.git
+   cd ipq6k
    ./scripts/feeds update -a && ./scripts/feeds install -a
    make menuconfig
    ```
@@ -36,14 +36,14 @@
 （-j 后面是线程数，为便于排除错误推荐用单线程）
 
    ```bash
-   make download -j8
+   make download -j8 V=s
    make -j1 V=s
    ```
 
 5. 二次编译：
 
    ```bash
-   cd ipq6000
+   cd ipq6k
    git fetch && git reset --hard origin/main
    ./scripts/feeds update -a && ./scripts/feeds install -a
    make defconfig
